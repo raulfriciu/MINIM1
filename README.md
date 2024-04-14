@@ -19,3 +19,7 @@ Listado de planes de vuelo que han sido asignadas a un dron
 
 
 Me quedan por desarrollar bastantes cosas aunque confío en que las pueda solucionar hasta el lunes.
+
+
+ACTUALIZACIÓN
+No he conseguido solucionar grandes cosas más que me funcione el test y haber retocado los archivos que ya funcionaban bastante correctamente
