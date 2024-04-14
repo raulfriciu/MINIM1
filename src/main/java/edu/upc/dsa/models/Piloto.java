@@ -9,12 +9,9 @@ public class Piloto {
     String apellido;
     static int lastId;
 
+
     public Piloto(String name, String apellido) {
         this.id = RandomUtils.getId();
-    }
-
-    public Piloto(String name, String apellido, String modelo) {
-        this(name, apellido);
         this.setApellido(apellido);
         this.setName(name);
     }
@@ -46,7 +43,7 @@ public class Piloto {
 
     @Override
     public String toString() {
-        return "Dron [id="+id+", name=" + name + ", fabricante=" + apellido + "]";
+        return "Piloto [id="+id+", name=" + name + ", apellido=" + apellido + "]";
     }
 
 }

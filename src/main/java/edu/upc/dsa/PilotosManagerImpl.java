@@ -9,7 +9,7 @@ import org.apache.log4j.Logger;
 public class PilotosManagerImpl implements PilotosManager {
     private static PilotosManager instance;
     protected List<Piloto> pilotos;
-    final static Logger logger = Logger.getLogger(PilotosManagerImpl.class);
+    final static Logger logger_p = Logger.getLogger(PilotosManagerImpl.class);
 
     private PilotosManagerImpl() {
         this.pilotos = new LinkedList<>();
@@ -22,16 +22,16 @@ public class PilotosManagerImpl implements PilotosManager {
 
     public int size() {
         int ret = this.pilotos.size();
-        logger.info("size " + ret);
+        logger_p.info("size " + ret);
 
         return ret;
     }
 
     public Piloto addPiloto(Piloto p) {
-        logger.info("new Piloto " + p);
+        logger_p.info("new Piloto " + p);
 
         this.pilotos.add (p);
-        logger.info("new Piloto added");
+        logger_p.info("new Piloto added");
         return p;
     }
 
@@ -40,17 +40,17 @@ public class PilotosManagerImpl implements PilotosManager {
     }
 
     public Piloto getPiloto(String id) {
-        logger.info("getPiloto("+id+")");
+        logger_p.info("getPiloto("+id+")");
 
         for (Piloto p: this.pilotos) {
             if (p.getId().equals(id)) {
-                logger.info("getPiloto("+id+"): "+p);
+                logger_p.info("getPiloto("+id+"): "+p);
 
                 return p;
             }
         }
 
-        logger.warn("not found " + id);
+        logger_p.warn("not found " + id);
         return null;
     }
 
@@ -63,9 +63,9 @@ public class PilotosManagerImpl implements PilotosManager {
 
         Piloto p = this.getPiloto(id);
         if (p==null) {
-            logger.warn("not found " + p);
+            logger_p.warn("not found " + p);
         }
-        else logger.info(p+" deleted ");
+        else logger_p.info(p+" deleted ");
 
         this.pilotos.remove(p);
 
@@ -76,15 +76,15 @@ public class PilotosManagerImpl implements PilotosManager {
         Piloto q = this.getPiloto(p.getId());
 
         if (q!=null) {
-            logger.info(p +" rebut!!!! ");
+            logger_p.info(p +" rebut!!!! ");
 
             q.setApellido(p.getApellido());
             q.setName(p.getName());
 
-            logger.info(q+" updated ");
+            logger_p.info(q+" updated ");
         }
         else {
-            logger.warn("not found "+ p);
+            logger_p.warn("not found "+ p);
         }
 
         return q;
